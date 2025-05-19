@@ -1,0 +1,76 @@
+// Colores base
+$app-bg:         #f2f2f2;
+$primary-color:  #007aff;
+$active-tag-bg:  #e6ffed;
+$active-tag-color: #3dbb3d;
+$inactive-tag-bg:  #fff1f0;
+$inactive-tag-color:#ff4d4f;
+
+// Layout general
+.app-header {
+  background-color: $app-bg;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  &__logo {
+    height: 32px;
+  }
+}
+
+.app-content {
+  padding: 24px;
+  background: #fff;
+}
+
+// Breadcrumb
+.app-breadcrumb {
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+/* Sólo para el modal de borrado */
+.delete-user-modal {
+  /* Línea gris justo debajo del header */
+  .ant-modal-header {
+    border-bottom: 1px solid #e8e8e8;
+  }
+  /* Línea gris justo encima del footer */
+  .ant-modal-footer {
+    border-top: 1px solid #e8e8e8;
+  }
+}
+
+
+// Overrides global Ant Design
+:global {
+  .ant-btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    border-radius: 4px;
+  }
+
+  .ant-tag-active {
+    background-color: $active-tag-bg !important;
+    color: $active-tag-color !important;
+    border: none !important;
+  }
+
+  .ant-tag-inactive {
+    background-color: $inactive-tag-bg !important;
+    color: $inactive-tag-color !important;
+    border: none !important;
+  }
+
+  .ant-input-search .ant-input {
+    border-radius: 4px;
+  }
+
+  .ant-select-selector {
+    border-radius: 4px;
+  }
+
+  .ant-table {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+}

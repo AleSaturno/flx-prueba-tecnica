@@ -4,7 +4,8 @@
 */
 
 function reverseString(str) {
-  // Tu solución acá  
+  // Tu solución acá
+  return str.split("").reverse().join("");  
 }
 
 /*
@@ -14,6 +15,9 @@ function reverseString(str) {
 */
 function isPalindrome(str) {
   // Tu solución acá
+  const limpio = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const reversa = limpio.split("").reverse().join("");
+  return limpio === reversa;
 }
 
 /*
@@ -31,6 +35,22 @@ function isPalindrome(str) {
 
 function closestPair(arr) {
   // Tu solución acá
+  if(arr.length < 2) return[];
+
+  arr.sort((a,b) => a-b);
+  let minDif = Infinity;
+  let pair = [];
+
+   arr.forEach((num, i) => {
+    if (i < arr.length - 1) {
+      const dif = Math.abs(num - arr[i + 1]);
+      if (dif < minDif) {
+        minDif = dif;
+        pair = [num, arr[i + 1]];
+      }
+    }
+  });
+  return pair;
 }
 
 
@@ -68,7 +88,51 @@ function closestPair(arr) {
 
 class Calculator {
   // Tu solución acá
+  constructor(){
+    this.lastResult = null;
+  }
+
+ add(a, b) {
+    this.lastResult = a + b;
+    return this.lastResult;
+  }
+
+  subtract(a, b) {
+    this.lastResult = a - b;
+    return this.lastResult;
+  }
+
+  multiply(a, b) {
+    this.lastResult = a * b;
+    return this.lastResult;
+  }
+
+
+  //Aclaracion en los comentarios throw new Error. Tuve que fijarme en el index.test.js, como estaban escritos por que sino no me pasaban los test ;)
+  divide(a, b) {
+    if (b === 0) {
+      throw new Error("Division by zero is not allowed");
+    }
+    this.lastResult = a / b;
+    return this.lastResult;
+  }
+
+  getLastResult() {
+    return this.lastResult;
+  }
 }
+
+
+Calculator.prototype.exponentiate = function (base, exponent) {
+  if (exponent < 0) {
+    throw new Error("Exponentiation with negative exponent is not allowed");
+  }
+  this.lastResult = Math.pow(base, exponent);
+  return this.lastResult;
+};
+
+
+ 
 
 module.exports = {
   closestPair,
