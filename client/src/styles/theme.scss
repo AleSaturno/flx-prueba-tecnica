@@ -73,4 +73,10 @@ $inactive-tag-color:#ff4d4f;
     border-radius: 8px;
     overflow: hidden;
   }
+  .ant-table-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 }

@@ -38,9 +38,9 @@ const UserList = ({ onEdit }) => {
   };
 
   const columns = [
-    { title: 'Usuario',  dataIndex: 'username',  key: 'username' },
-    { title: 'Nombre',   dataIndex: 'name',      key: 'name' },
-    { title: 'Apellido', dataIndex: 'lastname',  key: 'lastname' },
+    { title: 'Usuario',  dataIndex: 'username',  key: 'username',ellipsis: true},
+    { title: 'Nombre',   dataIndex: 'name',      key: 'name', ellipsis: true },
+    { title: 'Apellido', dataIndex: 'lastname',  key: 'lastname', ellipsis: true },
     {
       title: 'Estado',
       dataIndex: 'status',

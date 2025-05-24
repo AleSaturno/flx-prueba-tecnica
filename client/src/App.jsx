@@ -65,6 +65,8 @@ const App = () => {
         footer={null}
         onCancel={closeModal}
         destroyOnClose
+        width={600}
+        bodyStyle={{padding:"24px"}}
       >
         <UserForm onSuccess={closeModal} />
       </Modal>
